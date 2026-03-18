@@ -1,6 +1,6 @@
 class ZikrTask {
   final String title;
-  final List<String> targetWords; // Now accepts multiple variations!
+  final List<String> targetWords;
   final int targetCount;
   int currentCount;
   bool isCompleted;
