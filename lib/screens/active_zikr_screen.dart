@@ -28,7 +28,6 @@ class _ActiveZikrScreenState extends State<ActiveZikrScreen> {
 
   @override
   void dispose() {
-    // FIX: Safely stop listening without crashing the app!
     _zikrProvider.stopListeningSilent();
     super.dispose();
   }
@@ -89,12 +88,11 @@ class _ActiveZikrScreenState extends State<ActiveZikrScreen> {
             if (provider.isListening)
               const Text('Listening...', style: TextStyle(color: Colors.red, fontWeight: FontWeight.bold))
             else if (!task.isCompleted)
-              const Text('Tap mic to start hands-free counting'),
+              const Text('Tap mic to start handsfree counting'),
 
-            // --- THE DEBUG TEXT IS NOW VISIBLE ---
             Padding(
               padding: const EdgeInsets.all(20.0),
-              child: Text('Heard: ${provider.lastWords}', textAlign: TextAlign.center, style: TextStyle(color: Colors.blueGrey)),
+              child: Text('Heard: ${provider.lastWords}', textAlign: TextAlign.center, style: const TextStyle(color: Colors.blueGrey)),
             )
           ],
         ),
