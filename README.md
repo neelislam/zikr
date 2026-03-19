@@ -1,38 +1,39 @@
-# ✨ Zikr | 🌾 ذِكْر
+# 📿 Smart Zikr - Hands-Free Voice Counter
 
-> A beautiful, mindful Flutter application designed for spiritual consistency and tranquility.
+![Flutter](https://img.shields.io/badge/Flutter-%2302569B.svg?style=for-the-badge&logo=Flutter&logoColor=white)
+![Dart](https://img.shields.io/badge/dart-%230175C2.svg?style=for-the-badge&logo=dart&logoColor=white)
+![iOS](https://img.shields.io/badge/iOS-000000?style=for-the-badge&logo=ios&logoColor=white)
+![Android](https://img.shields.io/badge/Android-3DDC84?style=for-the-badge&logo=android&logoColor=white)
 
-[![Flutter](https://img.shields.io/badge/Flutter-%2302569B.svg?style=for-the-badge&logo=Flutter&logoColor=white)](https://flutter.dev)
-[![Dart](https://img.shields.io/badge/dart-%230175C2.svg?style=for-the-badge&logo=dart&logoColor=white)](https://dart.dev)
-[![License: MIT](https://img.shields.io/badge/License-MIT-green.svg?style=for-the-badge)](https://opensource.org/licenses/MIT)
+**Smart Zikr** is an intelligent, completely hands-free Zikr counter built with Flutter. Whether you are coding, driving, cooking, or typing, you no longer need to hold your phone or a physical Tasbeeh to keep track. Just speak, and the app's AI voice engine will automatically recognize your Zikr and update your count in real-time.
 
----
+## ✨ Key Features
 
-## 🌟 Overview
-**Zikr** is a digital companion for daily remembrance. Built with Flutter, it focuses on providing a distraction-free, elegant user experience to help users maintain their spiritual habits effortlessly.
+* **🎙️ Hands-Free Voice Recognition:** Uses native iOS/Android speech-to-text engines to listen continuously in the background.
+* **🧠 Smart "Fuzzy" NLP Matching:** Handles accents and mispronunciations beautifully. If you say "Astagfirullah" but the phone hears "Aas tak", the algorithm detects the similarity and counts it anyway.
+* **⏱️ Anti-Spam Cooldown:** A custom temporal lock prevents rapid double-counting (the "+3 bug") caused by fast speech engines.
+* **📳 Haptic Feedback:** Feel a gentle vibration for every successful count, and a heavy vibration upon completing a mission. No need to look at the screen!
+* **🔥 Streaks & Activity Calendar:** Gamifies your habits with a GitHub-style contribution heat-map and daily streak counter.
+* **🌙 Dynamic UI:** Beautiful, minimalist Islamic design with seamless Light/Dark mode transitions and authentic Arabic typography.
 
-### 🚀 Features
-* **Minimalist Design:** Clean UI to keep you focused.
-* **Smooth UX:** Fluid transitions and high-performance animations.
-* **Cross-Platform:** One codebase for a seamless experience on iOS and Android.
-* **Lightweight:** Optimized for speed and low battery consumption.
-
----
+## 📱 Screenshots
+*(Add your screenshots here by dragging and dropping them into GitHub!)*
+| Dashboard & Calendar | Active Zikr (Light) | Active Zikr (Dark) |
+| :---: | :---: | :---: |
+| `[Screenshot 1]` | `[Screenshot 2]` | `[Screenshot 3]` |
 
 ## 🛠️ Tech Stack
-* **Framework:** [Flutter](https://flutter.dev)
-* **Language:** [Dart](https://dart.dev)
-* **State Management:** (Provider)
+* **Framework:** Flutter (Dart)
+* **State Management:** Provider
+* **Packages:** `speech_to_text`, `string_similarity` (Levenshtein distance), `permission_handler`, `shared_preferences`.
 
----
-
-## 🏁 Getting Started
+## 🚀 Getting Started
 
 ### Prerequisites
-* [Flutter SDK](https://docs.flutter.dev/get-started/install) installed.
-* A physical device or emulator.
+* Flutter SDK (v3.0+)
+* Mac with Xcode (for iOS) or Android Studio.
 
-### Quick Start
-1. **Clone the repo**
+### Installation
+1. Clone the repo:
    ```bash
-   git clone [https://github.com/your-username/zikr.git](https://github.com/your-username/zikr.git)
+   git clone [https://github.com/yourusername/smart-zikr.git](https://github.com/yourusername/smart-zikr.git)
