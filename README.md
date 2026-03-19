@@ -17,9 +17,8 @@
 * **🌙 Dynamic UI:** Beautiful, minimalist Islamic design with seamless Light/Dark mode transitions and authentic Arabic typography.
 
 ## 📱 Screenshots
-*(Add your screenshots here by dragging and dropping them into GitHub!)*
-| Dashboard & Calendar | Active Zikr (Light) | Active Zikr (Dark) |
-| :---: |![Screenshot 1](https://github.com/user-attachments/assets/61f9ab1c-6a54-45d7-bf4e-8e32a40e78f2)
+| Dashboard & Calendar ![Screenshot 1](https://github.com/user-attachments/assets/61f9ab1c-6a54-45d7-bf4e-8e32a40e78f2) | Active Zikr (Light) | Active Zikr (Dark) |
+| :---: |
  :---: | :---: |![Screenshot 2](https://github.com/user-attachments/assets/3b52626a-4705-4707-9359-72d450277f36)![Screenshot 3](https://github.com/user-attachments/assets/bd31a51c-fec0-4c16-852e-c73daa416860)
 
 
