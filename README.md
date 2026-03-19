@@ -17,12 +17,10 @@
 * **🌙 Dynamic UI:** Beautiful, minimalist Islamic design with seamless Light/Dark mode transitions and authentic Arabic typography.
 
 ## 📱 Screenshots
-| Dashboard & Calendar ![Screenshot 1](https://github.com/user-attachments/assets/61f9ab1c-6a54-45d7-bf4e-8e32a40e78f2) | Active Zikr (Light) | Active Zikr (Dark) |
-| :---: |
- :---: | :---: |![Screenshot 2](https://github.com/user-attachments/assets/3b52626a-4705-4707-9359-72d450277f36)![Screenshot 3](https://github.com/user-attachments/assets/bd31a51c-fec0-4c16-852e-c73daa416860)
 
-
-| `[Screenshot 1]` | `[Screenshot 2]` | `[Screenshot 3]` |
+| Dashboard & Calendar | Active Zikr (Light) | Active Zikr (Dark) |
+| :---: | :---: | :---: |
+| ![Screenshot 1](https://github.com/user-attachments/assets/61f9ab1c-6a54-45d7-bf4e-8e32a40e78f2) | ![Screenshot 2](https://github.com/user-attachments/assets/3b52626a-4705-4707-9359-72d450277f36) | ![Screenshot 3](https://github.com/user-attachments/assets/bd31a51c-fec0-4c16-852e-c73daa416860) |
 
 ## 🛠️ Tech Stack
 * **Framework:** Flutter (Dart)
@@ -38,4 +36,4 @@
 ### Installation
 1. Clone the repo:
    ```bash
-   git clone [https://github.com/yourusername/smart-zikr.git](https://github.com/yourusername/smart-zikr.git)
+   git clone [https://github.com/neelislam/smart-zikr.git](https://github.com/neelislam/smart-zikr.git)
