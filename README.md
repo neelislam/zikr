@@ -22,7 +22,7 @@
 ## 🛠️ Tech Stack
 * **Framework:** [Flutter](https://flutter.dev)
 * **Language:** [Dart](https://dart.dev)
-* **State Management:** (e.g., Provider / Bloc / Riverpod)
+* **State Management:** (Provider)
 
 ---
 
