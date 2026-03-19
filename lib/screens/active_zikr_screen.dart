@@ -36,37 +36,84 @@ class _ActiveZikrScreenState extends State<ActiveZikrScreen> {
   Widget build(BuildContext context) {
     final provider = Provider.of<ZikrProvider>(context);
     final task = provider.currentTask;
+    final theme = Theme.of(context);
 
     if (task == null) return const Scaffold();
 
+    double progress = task.currentCount / task.targetCount;
+
     return Scaffold(
-      appBar: AppBar(title: Text(task.title), centerTitle: true),
-      body: Column(
-        mainAxisAlignment: MainAxisAlignment.center,
-        children: [
-          Text('${task.currentCount}', style: const TextStyle(fontSize: 120, fontWeight: FontWeight.bold, color: Colors.teal)),
-          Text('of ${task.targetCount}', style: const TextStyle(fontSize: 24, color: Colors.grey)),
-          const SizedBox(height: 60),
-          GestureDetector(
-            onTap: () => provider.isListening ? provider.stopListening() : provider.startListening(),
-            child: CircleAvatar(
-              radius: 60,
-              backgroundColor: provider.isListening ? Colors.red : Colors.teal,
-              child: Icon(provider.isListening ? Icons.mic : Icons.mic_none, size: 40, color: Colors.white),
-            ),
+      appBar: AppBar(
+        backgroundColor: Colors.transparent,
+        elevation: 0,
+        iconTheme: IconThemeData(color: theme.colorScheme.onSurface),
+      ),
+      body: Center(
+        child: SafeArea(
+          child: Column(
+            children: [
+              const SizedBox(height: 20),
+              Text(task.arabicTitle, style: TextStyle(fontSize: 36, color: theme.colorScheme.primary, fontWeight: FontWeight.w600)),
+              Text(task.title, style: const TextStyle(fontSize: 18, color: Colors.grey)),
+
+              const Spacer(),
+
+              Stack(
+                alignment: Alignment.center,
+                children: [
+                  SizedBox(
+                    width: 250, height: 250,
+                    child: CircularProgressIndicator(
+                      value: progress,
+                      strokeWidth: 8,
+                      backgroundColor: theme.colorScheme.onSurface.withOpacity(0.05),
+                      color: theme.colorScheme.secondary,
+                    ),
+                  ),
+                  Column(
+                    mainAxisSize: MainAxisSize.min,
+                    children: [
+                      Text('${task.currentCount}', style: TextStyle(fontSize: 80, fontWeight: FontWeight.w300, color: theme.colorScheme.onSurface, height: 1.0)),
+                      Text('of ${task.targetCount}', style: const TextStyle(fontSize: 20, color: Colors.grey)),
+                    ],
+                  ),
+                ],
+              ),
+
+              const Spacer(),
+
+              if (task.isCompleted)
+                Text('Alhamdulillah, Mission Completed! 🎉', style: TextStyle(fontSize: 20, color: theme.colorScheme.primary, fontWeight: FontWeight.bold))
+              else
+                GestureDetector(
+                  onTap: () => provider.isListening ? provider.stopListening() : provider.startListening(),
+                  child: AnimatedContainer(
+                    duration: const Duration(milliseconds: 300),
+                    height: 80, width: 80,
+                    decoration: BoxDecoration(
+                        color: provider.isListening ? theme.colorScheme.primary : theme.colorScheme.surface,
+                        shape: BoxShape.circle,
+                        boxShadow: [
+                          BoxShadow(
+                            color: provider.isListening ? theme.colorScheme.primary.withOpacity(0.4) : Colors.black.withOpacity(0.1),
+                            blurRadius: provider.isListening ? 20 : 10,
+                          )
+                        ]
+                    ),
+                    child: Icon(
+                        provider.isListening ? Icons.mic : Icons.mic_none,
+                        size: 35,
+                        color: provider.isListening ? Colors.white : theme.colorScheme.primary
+                    ),
+                  ),
+                ),
+
+              const SizedBox(height: 20),
+              Text(provider.debugMessage, style: TextStyle(color: Colors.grey.shade500, fontSize: 12)),
+              const SizedBox(height: 30),
+            ],
           ),
-          const SizedBox(height: 40),
-          Padding(
-            padding: const EdgeInsets.symmetric(horizontal: 30),
-            child: Column(
-              children: [
-                Text('System: ${provider.debugMessage}', style: const TextStyle(color: Colors.orange, fontWeight: FontWeight.bold)),
-                const SizedBox(height: 10),
-                Text('Heard: ${provider.lastWords}', style: const TextStyle(color: Colors.blueGrey, fontStyle: FontStyle.italic)),
-              ],
-            ),
-          ),
-        ],
+        ),
       ),
     );
   }
